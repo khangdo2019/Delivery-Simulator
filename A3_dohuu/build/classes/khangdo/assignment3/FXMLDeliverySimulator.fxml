@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane id="BorderPane" prefHeight="600.0" prefWidth="500.0" 
+            styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="khangdo.assignment3.FXMLDeliverySimulatorController">
+    <stylesheets>
+        <URL value="@fxmldeliverysimulator.css"/>
+    </stylesheets>
+    <top>
+        <Label fx:id="lblAnnouncement" id="label-top" maxWidth="Infinity"/>            
+        
+    </top>
+    <left>
+        <GridPane id="grid-pane-left" minHeight="300" >
+            <children> 
+                <VBox minWidth="140" prefHeight="100" GridPane.rowIndex="0" 
+                      GridPane.columnIndex="0" styleClass="item-box" id="vbox1">
+                    <GridPane.margin>
+                        <Insets right="0.0" left="5.0" top="5.0" bottom="0.0" />
+                    </GridPane.margin>
+                    <Label text="A: Cargo Van"/>
+                    <Label fx:id="lblVanItems" text="Holding 0 items/8 max"/>
+                    <Label fx:id="lblVanValue" text="Contents value $0"/>                    
+                </VBox>
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" 
+                      styleClass="item-box" id="vbox2">
+                    <GridPane.margin>
+                        <Insets right="5.0" left="0.0" top="5.0" bottom="0.0" />
+                    </GridPane.margin>
+                    <ImageView fitHeight="100" fitWidth="100" 
+                               preserveRatio="true" >
+                        <image>
+                            <Image url="@images/van.jpg" />
+                        </image>
+                    </ImageView>
+                </VBox>
+                <VBox minWidth="140" prefHeight="100" GridPane.rowIndex="1" 
+                      GridPane.columnIndex="0" styleClass="item-box" id="vbox3">
+                    <GridPane.margin>
+                        <Insets right="0.0" left="5.0" top="0.0" bottom="0.0" />
+                    </GridPane.margin>
+                    <Label text="B: Regular Car"/>
+                    <Label fx:id="lblCarItems" text="Holding 0 items/4 max"/>
+                    <Label fx:id="lblCarValue" text="Contents value $0"/>
+                </VBox>
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" 
+                      styleClass="item-box" id="vbox4">
+                    <GridPane.margin>
+                        <Insets right="5.0" left="0.0" top="0.0" bottom="0.0" />
+                    </GridPane.margin>
+                    <ImageView fitHeight="100" fitWidth="100" 
+                               preserveRatio="true" >
+                        <image>
+                            <Image url="@images/car.jpg" />
+                        </image>
+                    </ImageView>
+                </VBox>
+                <VBox minWidth="140" prefHeight="100" GridPane.rowIndex="2" 
+                      GridPane.columnIndex="0" styleClass="item-box" id="vbox5">
+                    <GridPane.margin>
+                        <Insets right="0.0" left="5.0" top="0.0" bottom="5.0" />
+                    </GridPane.margin>
+                    <Label text="C: Unicycle"/>
+                    <Label fx:id="lblUnicycleItems" 
+                           text="Holding 0 items/1 max"/>
+                    <Label fx:id="lblUnicycleValue" text="Contents value $0"/>
+                </VBox>
+                <VBox GridPane.rowIndex="2" GridPane.columnIndex="1" 
+                      styleClass="item-box" id="vbox6">
+                    <GridPane.margin>
+                        <Insets right="5.0" left="0.0" top="0.0" bottom="5.0" />
+                    </GridPane.margin>
+                    <ImageView  fitHeight="100" fitWidth="100" 
+                                preserveRatio="true" >
+                        <image>
+                            <Image url="@images/unicycle.jpg" />
+                        </image>
+                    </ImageView>
+                </VBox>
+                <VBox maxWidth="280" minHeight="180" GridPane.rowIndex="3" 
+                      GridPane.columnIndex="0" GridPane.columnSpan="2" 
+                      id="vbox-delivery">
+                    <GridPane.margin>
+                        <Insets right="5.0" left="5.0" top="10.0" 
+                                bottom="10.0" />
+                    </GridPane.margin>
+                    <children>
+                        <Button fx:id="btnDelivery" text="Make a Delivery" 
+                                visible="false" onAction="#makeDelivery" 
+                                maxWidth="Infinity" 
+                                styleClass="button-delivery-quit"/>
+                        <Button fx:id="btnQuit" text="Quit" visible="false" 
+                                onAction="#quit" maxWidth="Infinity" 
+                                styleClass="button-delivery-quit"/>
+                        <Label fx:id="lblErrorMessage" wrapText="true" 
+                               maxWidth="Infinity"/>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>       
+    </left>
+    <center>
+        <VBox prefWidth="40" prefHeight="480">
+                
+        </VBox> 
+    </center>
+    
+    <right>
+        <GridPane minWidth="280" prefHeight="480" styleClass="grid-pane" 
+                  id="gridpane-right"> 
+            <children>                
+                <VBox GridPane.halignment="CENTER" id="vbox-right" 
+                      minHeight="250">
+                    
+                    <Label fx:id="lblNextItem" text="Next Item to Deliver" 
+                           styleClass="label-item" GridPane.rowIndex="0" 
+                           GridPane.columnIndex="2" >
+                        <GridPane.margin>
+                            <Insets right="5.0" left="0.0" top="5.0" 
+                                    bottom="0.0" />
+                        </GridPane.margin>
+                    </Label>                  
+                    <ImageView fx:id="imgItem"  fitHeight="180" fitWidth="160" 
+                               preserveRatio="true" GridPane.rowIndex="1" 
+                               GridPane.columnIndex="1" GridPane.columnSpan="3" 
+                               id="image-item">
+                        <GridPane.margin>
+                            <Insets right="5.0" left="0.0" top="5.0" 
+                                    bottom="0.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <Label fx:id="lblItemName" styleClass="label-item" 
+                           GridPane.rowIndex="2" GridPane.columnIndex="2"/>                    
+                    <Label fx:id="lblItemValue" styleClass="label-item" 
+                           GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                </VBox>
+                <VBox minWidth="250" minHeight="180"  id="vbox-bottom-right" 
+                      GridPane.rowIndex="3" GridPane.halignment="CENTER"> 
+                    <GridPane.margin>
+                        <Insets right="5.0" left="5.0" top="5.0" bottom="5.0" />
+                    </GridPane.margin>
+                    <Label text="Deliver with Vehicle:" 
+                           GridPane.columnIndex="1"/>
+                    <fx:define>
+                        <ToggleGroup fx:id="grpDelivery"/>
+                    </fx:define>
+                    <RadioButton fx:id="optA" toggleGroup="$grpDelivery" 
+                                 text="A" GridPane.columnIndex="1" />
+                    <RadioButton fx:id="optB" toggleGroup="$grpDelivery" 
+                                 text="B" GridPane.columnIndex="1" />
+                    <RadioButton fx:id="optC" toggleGroup="$grpDelivery" 
+                                 text="C" GridPane.columnIndex="1" />
+                    <Button fx:id="btnLoadItem" text="Load Items Now" 
+                            onAction="#loadItems" GridPane.columnIndex="1" 
+                            GridPane.columnSpan="3" maxWidth="Infinity" 
+                            id="button-load-item"/>
+                </VBox>
+            </children>
+        </GridPane>        
+    </right>
+    
+    <bottom> 
+        <TextArea fx:id="txtResult" editable="false" wrapText="true" 
+                  id="textarea-bottom"/>
+    </bottom>
+    
+</BorderPane>

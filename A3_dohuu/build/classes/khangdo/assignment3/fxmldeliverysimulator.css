@@ -1,0 +1,119 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-padding: 5px;
+    -fx-background-color: white;
+    -fx-font-family: sans-serif;
+}
+
+.item-box {
+    -fx-spacing: 5px;
+    -fx-alignment: center-left;
+    -fx-background-color: white;    
+}
+
+.grid-pane {    
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+    -fx-alignment: baseline-center;
+}
+
+.label-item {
+    -fx-text-alignment: center;
+}
+
+#grid-pane-left {
+    -fx-background-color: skyblue;
+    -fx-padding: 5px;
+    -fx-border-color: white white white black;
+    -fx-border-width: 2px;
+}
+
+.label {
+    -fx-padding: 1px;
+}
+
+#label-top {
+    -fx-alignment: center;
+    -fx-border-color: black;
+    -fx-border-width: 2 2 1 2;
+    -fx-padding: 10px;
+}
+
+#vbox1 {
+    -fx-border-color: black white white black;    
+}
+
+#vbox2 {
+    -fx-border-color: black black white white;    
+}
+
+#vbox3 {
+    -fx-border-color: white white white black;
+}
+
+#vbox4 {
+    -fx-border-color: white black white white;    
+}
+
+#vbox5 {
+    -fx-border-color: white white black black;    
+}
+
+#vbox6 {
+    -fx-border-color: white black black white;        
+}
+
+#vbox-delivery {
+    -fx-spacing: 10px;
+}
+
+.button-delivery-quit {
+    -fx-label-padding: 5px;
+    -fx-text-file: red;
+    -fx-font-size: 14px;
+    -fx-background-color: moccasin;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+#textarea-bottom {
+    -fx-pref-row-count: 5;
+    -fx-border-color: black;
+    -fx-border-width: 1 2 2 2;
+}
+
+#vbox-bottom-right {
+    -fx-background-color: skyblue;
+    -fx-border-color: black;
+    -fx-padding: 5px;
+    -fx-spacing: 10px;
+    -fx-text-alignment: center;
+}
+
+#image-item {
+    -fx-scale-shape: true;
+    -fx-spacing: 10px;
+    -fx-min-height: 100px;
+    -fx-min-width: 100px;
+}
+
+#vbox-right {    
+    -fx-spacing: 5px;
+    -fx-alignment: center;
+}
+
+#gridpane-right {
+    -fx-border-color: white black white white;
+    -fx-border-width: 2px;
+}
+
+#button-load-item {
+    -fx-label-padding: 5px;    
+    -fx-font-size: 14px;
+    -fx-background-color: moccasin;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
